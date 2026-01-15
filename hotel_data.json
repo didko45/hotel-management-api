@@ -1,0 +1,88 @@
+{
+    "rooms": [
+        {
+            "room_number": 101,
+            "name": "АП. 2А сгр.1",
+            "price": 70,
+            "type": "Studio"
+        },
+        {
+            "room_number": 102,
+            "name": "АТ.14 сгр.1",
+            "price": 70,
+            "type": "Studio"
+        },
+        {
+            "room_number": 103,
+            "name": "АП.12 сгр.4",
+            "price": 75,
+            "type": "Studio"
+        },
+        {
+            "room_number": 104,
+            "name": "АТ.14 сгр.4",
+            "price": 75,
+            "type": "Studio"
+        },
+        {
+            "room_number": 105,
+            "name": "АТ.6А сгр.2",
+            "price": 80,
+            "type": "Studio"
+        }
+    ],
+    "reservations": [
+        {
+            "id": 1,
+            "guest_name": "Dilyan",
+            "guest_email": "dilqn45@gmai.com",
+            "guest_phone": "+359899111033",
+            "room_number": 101,
+            "room_name": "АП. 2А сгр.1",
+            "check_in_date": "2026-05-26",
+            "check_out_date": "2026-05-30",
+            "nights": 4,
+            "total_price": 280,
+            "amount_paid": 70.0,
+            "payment_status": "paid",
+            "status": "pending",
+            "created_at": "2025-12-18T17:59:50.845529",
+            "notes": ""
+        },
+        {
+            "id": 2,
+            "guest_name": "dd",
+            "guest_email": "ddd@gmai.com",
+            "guest_phone": "dddd",
+            "room_number": 102,
+            "room_name": "АТ.14 сгр.1",
+            "check_in_date": "2025-12-18",
+            "check_out_date": "2025-12-21",
+            "nights": 3,
+            "total_price": 210,
+            "amount_paid": 70.0,
+            "payment_status": "partial",
+            "status": "active",
+            "created_at": "2025-12-18T18:00:50.762048",
+            "notes": ""
+        },
+        {
+            "id": 3,
+            "guest_name": "dddd",
+            "guest_email": "dddd@gmail.com",
+            "guest_phone": "dddd",
+            "room_number": 105,
+            "room_name": "АТ.6А сгр.2",
+            "check_in_date": "2025-12-18",
+            "check_out_date": "2025-12-21",
+            "nights": 3,
+            "total_price": 240,
+            "amount_paid": 120.0,
+            "payment_status": "partial",
+            "status": "pending",
+            "created_at": "2025-12-18T18:10:54.612925",
+            "notes": ""
+        }
+    ],
+    "guest_history": {}
+}

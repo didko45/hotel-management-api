@@ -1,0 +1,10 @@
+{
+    "email_enabled": false,
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "email_address": "",
+    "email_password": "",
+    "hotel_name": "My Hotel",
+    "hotel_address": "123 Main St",
+    "hotel_phone": "555-0100"
+}
