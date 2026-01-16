@@ -27,9 +27,11 @@ app = Flask(__name__)
 # Neon PostgreSQL connection
 DATABASE_URL = os.environ.get('DATABASE_URL')
 if DATABASE_URL:
-    # Fix for SQLAlchemy compatibility
+    # Fix for SQLAlchemy compatibility with psycopg3
     if DATABASE_URL.startswith('postgres://'):
-        DATABASE_URL = DATABASE_URL.replace('postgres://', 'postgresql://', 1)
+        DATABASE_URL = DATABASE_URL.replace('postgres://', 'postgresql+psycopg://', 1)
+    elif DATABASE_URL.startswith('postgresql://'):
+        DATABASE_URL = DATABASE_URL.replace('postgresql://', 'postgresql+psycopg://', 1)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL or 'sqlite:///hotel.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
