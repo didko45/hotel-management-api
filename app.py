@@ -190,17 +190,6 @@ def register():
     # Create default hotel for user
     hotel = Hotel(user_id=user.id, name=f"{username}'s Hotel")
     db.session.add(hotel)
-    db.session.commit()  # Commit to get hotel.id
-
-    # Create some default rooms
-    default_rooms = [
-        Room(hotel_id=hotel.id, room_number='101', name='Standard Room 1', room_type='Standard', price_per_night=50),
-        Room(hotel_id=hotel.id, room_number='102', name='Standard Room 2', room_type='Standard', price_per_night=50),
-        Room(hotel_id=hotel.id, room_number='201', name='Deluxe Room 1', room_type='Deluxe', price_per_night=80),
-    ]
-    for room in default_rooms:
-        db.session.add(room)
-
     db.session.commit()
 
     return jsonify({'success': True, 'message': 'Account created successfully'})
