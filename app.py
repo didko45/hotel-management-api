@@ -190,6 +190,7 @@ def register():
     # Create default hotel for user
     hotel = Hotel(user_id=user.id, name=f"{username}'s Hotel")
     db.session.add(hotel)
+    db.session.commit()  # Commit to get hotel.id
 
     # Create some default rooms
     default_rooms = [
