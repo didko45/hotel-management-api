@@ -43,6 +43,10 @@ app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
 # Initialize database
 db.init_app(app)
 
+# Create tables on startup
+with app.app_context():
+    db.create_all()
+
 # ============================================
 # SECURITY CONFIGURATION
 # ============================================
