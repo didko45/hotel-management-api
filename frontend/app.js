@@ -616,7 +616,7 @@ async function renderCalendar() {
     for (let day = 1; day <= daysInMonth; day++) {
         const currentDate = new Date(year, month, day);
         currentDate.setHours(0, 0, 0, 0);
-        const dateStr = currentDate.toISOString().split('T')[0];
+        const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 
         const isToday = currentDate.getTime() === today.getTime();
 
