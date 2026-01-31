@@ -620,13 +620,13 @@ async function renderCalendar() {
 
         const isToday = currentDate.getTime() === today.getTime();
 
-        // Find bookings for this day
+        // Find bookings for this day (exclude check-out date - guest leaves that day)
         const dayBookings = monthReservations.filter(res => {
             const checkIn = new Date(res.check_in_date);
             const checkOut = new Date(res.check_out_date);
             checkIn.setHours(0, 0, 0, 0);
-            checkOut.setHours(23, 59, 59, 999);
-            return currentDate >= checkIn && currentDate <= checkOut;
+            checkOut.setHours(0, 0, 0, 0);
+            return currentDate >= checkIn && currentDate < checkOut;
         });
 
         const hasBooking = dayBookings.length > 0;
@@ -675,7 +675,10 @@ function showDayDetails(date) {
         const checkIn = new Date(res.check_in_date);
         const checkOut = new Date(res.check_out_date);
         const selectedDate = new Date(date);
-        return selectedDate >= checkIn && selectedDate <= checkOut;
+        checkIn.setHours(0, 0, 0, 0);
+        checkOut.setHours(0, 0, 0, 0);
+        selectedDate.setHours(0, 0, 0, 0);
+        return selectedDate >= checkIn && selectedDate < checkOut;
     });
 
     if (dayReservations.length === 0) {
